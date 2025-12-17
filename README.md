@@ -19,7 +19,7 @@ Oh, and the board **SPINS**. 🌀
 ### 🧠 "Superhuman" Artificial Intelligence
 
 * **Bitboard Engine:** Bitwise operations for extreme performance.
-* * **Move Ordering:** Ordered according to created threats.
+* **Move Ordering:** Ordered according to created threats.
 * **Negamax + Alpha-Beta Pruning (with PVS):** Deep search with aggressive branch pruning.
 * **Transposition Tables (TT):** Massive cache (1GB+) with **Zobrist Hashing** to instantly remember past positions.
 * **Iterative Deepening:** The engine constantly improves its response until the allocated time runs out.
