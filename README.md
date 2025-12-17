@@ -116,6 +116,8 @@ It will automatically detect if you are on Linux, macOS, or Windows and apply op
 
 # Windows
 connect4.exe
+# Or, in Windows, if you don't have make or the batch file fails:
+gcc -std=c11 -O3 -march=native -flto -Iinclude src/*.c -o connect4.exe
 ```
 
 ### Configuration Menu
