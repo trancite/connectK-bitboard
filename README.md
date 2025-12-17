@@ -5,8 +5,6 @@
 ![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 ![Optimization](https://img.shields.io/badge/optimization-O3%20%7C%20AVX-red?style=for-the-badge)
 
-> **More than a game — a showcase of brute force and algorithmic elegance.**
-
 
 Welcome to **Gravity 4**, a pure C implementation of the classic *Connect 4*. This project avoids slow arrays, instead leveraging **128-bit Bitboards**. This architectural choice makes Gravity 4 one of the few open-source engines capable of playing at a **superhuman level on large boards (8x8, 10x10)**, where standard 64-bit bots simply fail.
 It also uses state-of-the-art adversarial search algorithms and a smooth, animated terminal interface.
