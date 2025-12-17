@@ -6,7 +6,7 @@
 ![Optimization](https://img.shields.io/badge/optimization-O3%20%7C%20AVX-red?style=for-the-badge)
 
 
-Welcome to **Gravity 4**, a pure C implementation of the classic *Connect 4*. This project avoids slow arrays, instead leveraging **128-bit Bitboards**. This architectural choice makes Gravity 4 one of the few open-source engines capable of playing at a **superhuman level on large boards (8x8, 10x10)**, where standard 64-bit bots simply fail.
+Welcome to **Conenct-K**, a pure C implementation of the classic *Connect 4*, generalized so that you can choose to connect **K pieces in a row** (optimized for 4). This project avoids slow arrays, instead leveraging **128-bit Bitboards**. This architectural choice makes **Conenct-K** one of the few open-source engines capable of playing at a **superhuman level on large boards (8x8, 10x10)**, where standard 64-bit bots simply fail.
 It also uses state-of-the-art adversarial search algorithms and a smooth, animated terminal interface.
 
 
@@ -29,6 +29,7 @@ Oh, and the board **SPINS**. 🌀
 Most Connect 4 engines are limited to `uint64_t` bitboards, capping their physical board size at roughly 7x6 cells.
 *   **The Competitors:** On larger boards (like 8x8 or 10x10), standard bots forcedly switch to slow array-based logic, dropping their performance to near zero.
 *   **Gravity 4:** Thanks to the **128-bit architecture**, this engine maintains its O(1) win detection speed even on massive grids (up to 10x10), keeping the AI "invincible".
+* **Conecta K** This engine can efficiently evaluate **any K-in-a-row patterns** on arbitrary board sizes. It not only detects wins but also locates empty spaces where K-in-a-row could form, allowing the AI to plan ahead with superhuman precision—even on large grids.
 
 ### 🎮 Gameplay Experience
 
