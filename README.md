@@ -19,11 +19,10 @@ Oh, and the board **SPINS**. 🌀
 ### 🧠 "Superhuman" Artificial Intelligence
 
 * **Bitboard Engine:** Bitwise operations for extreme performance.
+* * **Move Ordering:** Ordered according to created threats.
 * **Negamax + Alpha-Beta Pruning (with PVS):** Deep search with aggressive branch pruning.
 * **Transposition Tables (TT):** Massive cache (1GB+) with **Zobrist Hashing** to instantly remember past positions.
 * **Iterative Deepening:** The engine constantly improves its response until the allocated time runs out.
-* **Fail-Soft Logic:** Maximizes information stored in the TT even when a search fails.
-* **Move Ordering:** Ordered according to created threats. *Note: Killer Moves and History Heuristic have NOT been used because they didn't help.*
 
 ### 🏆 Why 128-bit Matters? (The 64-bit Barrier)
 
