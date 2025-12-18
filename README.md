@@ -1,4 +1,4 @@
-# 🔴 Gravity 4: High-Performance Bitboard Engine
+# 🔴 Connect-K: High-Performance Bitboard Engine
 
 ![Language](https://img.shields.io/badge/language-C11-00599C?style=for-the-badge\&logo=c)
 ![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey?style=for-the-badge)
@@ -28,8 +28,8 @@ Oh, and the board **SPINS**. 🌀
 
 Most Connect 4 engines are limited to `uint64_t` bitboards, capping their physical board size at roughly 7x6 cells.
 *   **The Competitors:** On larger boards (like 8x8 or 10x10), standard bots forcedly switch to slow array-based logic, dropping their performance to near zero.
-*   **Gravity 4:** Thanks to the **128-bit architecture**, this engine maintains its O(1) win detection speed even on massive grids (up to 10x10), keeping the AI "invincible".
-* **Conecta K** This engine can efficiently evaluate **any K-in-a-row patterns** on arbitrary board sizes. It not only detects wins but also locates empty spaces where K-in-a-row could form, allowing the AI to plan ahead with superhuman precision—even on large grids.
+*   **Connect-4:** Thanks to the **128-bit architecture**, this engine maintains its O(1) win detection speed even on massive grids (up to 10x10), keeping the AI "invincible".
+* **Connect-K** This engine can efficiently evaluate **any K-in-a-row patterns** on arbitrary board sizes. It not only detects wins but also locates empty spaces where K-in-a-row could form, allowing the AI to plan ahead with superhuman precision—even on large grids.
 
 ### 🎮 Gameplay Experience
 
@@ -58,9 +58,9 @@ The engine displays detailed metrics while it "thinks". Here's what they mean:
 
 2. **EBF (Effective Branching Factor):**
 
-   * In Connect 4, there are up to 7 possible moves. A raw brute-force search would have an EBF of 7.0.
+   * In Connect K, with a NxM board, there are up to M < 11 possible moves. A raw brute-force search would have an EBF of M.
    * Thanks to our **Alpha-Beta pruning** and move ordering, our EBF is **below 1.6**.
-   * **What does this mean?** The engine is so efficient at discarding bad moves that, mathematically, it’s as if the game only had 1 or 2 real options per turn instead of 7.
+   * **What does this mean?** The engine is so efficient at discarding bad moves that, mathematically, it’s as if the game only had 1 or 2 real options per turn instead of M.
 
 3. **Game Solving:**
 
@@ -85,7 +85,7 @@ The engine displays detailed metrics while it "thinks". Here's what they mean:
 During development, several standard chess engine heuristics were implemented, profiled, and ultimately discarded based on empirical data:
 
 *   **Killer Moves & History Heuristic:** Implemented but removed.
-    *   *Reason:* Connect 4 has a very low branching factor (max 7 moves) compared to Chess. The overhead of maintaining history tables slowed down the search (lower NPS) without significantly improving the Alpha-Beta cut-off rate.
+    *   *Reason:* Connect K has a very low branching factor (max M moves) compared to Chess. The overhead of maintaining history tables slowed down the search (lower NPS) without significantly improving the Alpha-Beta cut-off rate.
         - While I know that implementations like **Fhourstones** benefit from these techniques, I prefer this approach: ordering moves according to **threats created** and selective evaluation.
     *   *Solution:* A strict **"Threat-First" move ordering** (winning moves > blocking/threating moves > center columns) proved to be the most efficient strategy for this specific game complexity.
 *   **Transposition Table Sizing:**
@@ -113,12 +113,12 @@ It will automatically detect if you are on Linux, macOS, or Windows and apply op
 
 ```bash
 # Linux / macOS
-./connect4
+./connectK
 
 # Windows
-connect4.exe
+connectK.exe
 # Or, in Windows, if you don't have make or the batch file fails:
-gcc -std=c11 -O3 -march=native -flto -Iinclude src/*.c -o connect4.exe
+gcc -std=c11 -O3 -march=native -flto -Iinclude src/*.c -o connectK.exe
 ```
 
 ### Configuration Menu
