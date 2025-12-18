@@ -93,6 +93,25 @@ During development, several standard chess engine heuristics were implemented, p
 
 ---
 
+## 🧠 Two AI Modes
+
+This Connect-K engine comes with **two AI modes**, each offering a different style of play:
+
+1. **No-Heuristic Mode**  
+   - Explores the game tree to maximum possible depth.  
+   - Extremely strong and consistent, making near-optimal moves on any board size or K-value.  
+   - Performs best on **small boards (<7x7) or Connect-4**, where it always outperforms the heuristic mode.  
+   - On larger boards and higher K-values, the search depth is naturally limited, which can reduce optimality.
+
+2. **Heuristic Mode**  
+   - Uses evaluation heuristics to prioritize certain board patterns and explore unconventional moves.  
+   - Helps **compensate for reduced search depth** on larger boards or higher K-values.  
+   - Can sometimes outperform the no-heuristic mode in specific situations, but is less consistent overall.
+
+You can easily switch between modes to **experience different AI behaviors** and see how heuristics influence strategy, especially as board size and K increase.
+
+
+
 ## 🚀 Installation and Usage
 
 ## 🪟 Windows Users – Download the Executable
