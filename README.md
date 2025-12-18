@@ -95,6 +95,17 @@ During development, several standard chess engine heuristics were implemented, p
 
 ## 🚀 Installation and Usage
 
+## 🪟 Windows Users – Download the Executable
+
+If you are on **Windows** and want a quick way to run the program, you can download the prebuilt `.exe` from this repository’s **GitHub Actions artifacts**:
+
+1. Go to the **Actions** tab of this repository.
+2. Click on the latest workflow run (look for the build that produces the Windows executable).
+3. Scroll to the **Artifacts** section and download `connectK.exe`.
+4. Run the `.exe` directly – it includes everything you need to use the Waldo detector on Windows.
+
+> ⚠️ Note: Make sure your system allows running applications from unknown sources if Windows blocks it (SmartScre may warn you).
+
 This project includes a smart build system that detects your OS automatically.
 
 ### Compilation
